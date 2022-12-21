@@ -1,14 +1,41 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Friends</h1>
+<h1>Friends List</h1>
 
-<div id="friends">
+
+
+<table class="table table-danger">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ph#</th>
+      <th scope="col">Twitter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each_with_index do |friend, index| %>
+      <tr>
+        <td><%=index %></td>
+        <td><%=friend.First_name%></td>
+        <td><%=friend.Last_name%></td>
+        <td><%=friend.Email%></td>
+        <td><%=friend.Phone%></td>
+        <td><%=friend.Twitter%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<!-- <div id="friends">
   <% @friends.each do |friend| %>
     <%= render friend %>
     <p>
       <%= link_to "Show this friend", friend %>
     </p>
   <% end %>
-</div>
+</div> -->
 
 <%= link_to "New friend", new_friend_path %>
